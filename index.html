@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Barbearia Raul Navalhas | Experiência Premium em Barbearia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                "colors": {
+                        "primary": "#FFC300",
+                        "on-primary": "#000000",
+                        "surface": "#131313",
+                        "surface-container": "#1F1F1F",
+                        "surface-container-high": "#2A2A2A",
+                        "background": "#0E0E0E",
+                        "on-background": "#E2E2E2",
+                        "secondary": "#C6C6C7",
+                        "outline-variant": "#4F4632"
+                },
+                "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                },
+                "fontFamily": {
+                        "headline": ["Epilogue", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"]
+                }
+              },
+            },
+          }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .mobile-menu-open {
+            overflow: hidden;
+        }
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1.5px #E2E2E2;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-[100] bg-[#131313]/80 backdrop-blur-lg border-b border-white/5">
+<div class="flex justify-between items-center px-6 md:px-12 py-5 max-w-7xl mx-auto">
+<a class="text-xl md:text-2xl font-black tracking-tighter text-primary font-headline uppercase flex items-center gap-4" href="#">
+<img alt="Raul Navalha's Logo" class="h-10 md:h-12 w-auto object-contain rounded-full bg-white p-0.5" src="https://lh3.googleusercontent.com/aida/ADBb0ujj1rH20EwiuFV6rqC9o2p9MOEpQeoTi7OtvOBKlrjDlko242gE8WAtyIhaB3IeBu5cKfuZmGI8X1cqg1PwW3Ds4heOX8xEJM1XpO_uY2T6-aRZ6_Zik6mWjAW5AkkdR4T_o4spsBBsqHjvEE6na-TKOqfPy7SW0JswwIFgqbhV6ha7luXss15mldhg0R6FxWlcpMyBevHwjljTlEYKr3DO1rIDsxEEPWTK327jfmFSqgKUsNyTlCimhNwdhQLAZXHLB7ym_KZ6iVE"/>
+<span class="leading-none">Barbearia <br class="md:hidden"/> Raul Navalhas</span>
+</a>
+<!-- Desktop Menu -->
+<div class="hidden lg:flex items-center gap-10">
+<a class="font-headline tracking-tighter uppercase font-bold text-primary border-b-2 border-primary pb-1" href="#">Home</a>
+<a class="font-headline tracking-tighter uppercase font-bold text-on-background hover:text-primary transition-colors" href="#services">Serviços</a>
+<a class="font-headline tracking-tighter uppercase font-bold text-on-background hover:text-primary transition-colors" href="#differentiators">Diferenciais</a>
+<a class="font-headline tracking-tighter uppercase font-bold text-on-background hover:text-primary transition-colors" href="#gallery">Galeria</a>
+<a class="font-headline tracking-tighter uppercase font-bold text-on-background hover:text-primary transition-colors" href="#contact">Contatos</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden md:block bg-primary text-on-primary font-headline font-bold uppercase px-6 py-2.5 rounded-sm hover:brightness-110 transition-all tracking-tighter" href="https://wa.me/yournumber">Agendar</a>
+<!-- Hamburger Button -->
+<button class="lg:hidden text-on-background p-2" id="menu-toggle">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Mobile Overlay Menu -->
+<div class="fixed inset-0 bg-background z-[99] translate-x-full opacity-0 lg:hidden flex flex-col justify-center items-center gap-8" id="mobile-menu">
+<button class="absolute top-6 right-6 p-2 text-on-background" id="menu-close">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<a class="text-3xl font-headline font-black uppercase text-primary" href="#" onclick="toggleMenu()">Home</a>
+<a class="text-3xl font-headline font-black uppercase" href="#services" onclick="toggleMenu()">Serviços</a>
+<a class="text-3xl font-headline font-black uppercase" href="#differentiators" onclick="toggleMenu()">Diferenciais</a>
+<a class="text-3xl font-headline font-black uppercase" href="#gallery" onclick="toggleMenu()">Galeria</a>
+<a class="text-3xl font-headline font-black uppercase" href="#contact" onclick="toggleMenu()">Contatos</a>
+<a class="mt-4 bg-primary text-on-primary font-headline font-bold uppercase px-10 py-4 rounded-sm" href="https://wa.me/yournumber" onclick="toggleMenu()">Agendar</a>
+</div>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 lg:via-background/70 to-transparent z-10"></div>
+<img alt="Ambiente premium da Barbearia Raul Navalhas" class="w-full h-full object-cover grayscale opacity-30 lg:opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl2kIJDAL7Vh0tSPdqkWqZTCi203l7X2DNM_f8WImzouqGN_n7O3z2PC_M8vVOWbeGwu0yXtt0Zfh93Asv1wm-ZAv1oRTsn6R__DM6VIfNmZ10T8leEKXwNQfS2Q1LzMgplvdJRmXRCSwNE_-t1Ajany090_f8LUfaEz6Olu1I8Kc0iWUFq2dAWcoAZMltxgMJXPjcicoAuGERVAW9wh5Jnu48eSrhSgkHirctf-X6NKX3NWsqZIXcZUUFCZwOusvtYNqYPMSHHvlN"/>
+</div>
+<div class="container mx-auto px-6 lg:px-12 z-20">
+<div class="max-w-4xl">
+<span class="text-primary font-headline font-bold tracking-[0.2em] uppercase mb-4 block text-sm md:text-base">Barbearia Raul Navalhas</span>
+<h1 class="text-4xl sm:text-6xl lg:text-8xl font-black font-headline tracking-tighter text-on-background leading-[0.9] mb-8 uppercase">
+                Estilo, Precisão e Tradição: <br/> <span class="text-stroke">A Experiência Premium</span> que Você Merece.
+            </h1>
+<p class="text-lg md:text-xl text-secondary max-w-xl mb-12 leading-relaxed">
+                Mais que um corte, um ritual de cuidado para o homem moderno em um ambiente exclusivo no Jardim Rina.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="bg-primary text-on-primary font-headline font-bold uppercase px-10 py-5 rounded-sm hover:brightness-110 transition-all text-lg tracking-tighter text-center" href="https://wa.me/yournumber">
+                    Agende sua Experiência
+                </a>
+<a class="border border-white/20 text-on-background font-headline font-bold uppercase px-10 py-5 rounded-sm hover:bg-white/5 transition-all text-lg tracking-tighter text-center" href="#services">
+                    Ver serviços
+                </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Scrolling Preview Cards -->
+<section class="py-12 bg-surface">
+<div class="flex gap-6 overflow-x-auto hide-scrollbar px-6 lg:px-12 pb-6">
+<div class="flex-none w-[280px] md:w-80 h-[400px] md:h-[450px] relative group overflow-hidden rounded-sm">
+<img alt="Corte Magistral" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/ADBb0uixxSeA20QcVWB4UF89vuQmw7beR1Fl01KmKkGZZ3UUWkKhkyvH3L3dUxfegRhpsAy62K_16qFURMzH37ZLuOQACRTWXYl3ye6uU1AAX4hyvlOI60HScgepPY4Y0E5DrflTnpmXa7UvqTVLelFjRhh_w3b_w73EPHaja5wdnD-ejsb9kMxhYncqpSF4rGOTdp_wnjlERLAdYMZTOQ7FNONKizVFvsaIHuCFUnccPjMD63Uq21dXaYAn-MP0TWY8gJlxl4tDjs8dpWg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+<p class="absolute bottom-6 left-6 font-headline font-bold text-white uppercase tracking-tighter">Corte Magistral</p>
+</div>
+<div class="flex-none w-[280px] md:w-80 h-[400px] md:h-[450px] relative group overflow-hidden rounded-sm">
+<img alt="Barba de Respeito" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqnghVOs35VQ83YCawa32W5BxxfhgWTZlGKBH44BF2w2eNkvIEBD4TjoOu2fMgagDqmcbm1xg4sOm2vH1G-ZnsnrSeq1PvG1vwKNnvgqyyvnHv_sbFEVYO8TakLaKjxu3GkYfGymJ62GQZtBhu3JcRjj5CP-hKnoKz1TmSIjk05rW6GtAfLl19Wo8kgExiMuSkbocCS5J54ht-aXl4LUiTSCJLjbXw1DZPUWxJB8qP50zoQ64UAj8O4AsHY_mbMrcADG82RG8BdbS2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+<p class="absolute bottom-6 left-6 font-headline font-bold text-white uppercase tracking-tighter">Barba de Respeito</p>
+</div>
+<div class="flex-none w-[280px] md:w-80 h-[400px] md:h-[450px] relative group overflow-hidden rounded-sm">
+<img alt="Acabamento e Estilo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxEb_gLoB2rs3hkD-0sW0c9gnBJV0P_PTd01MHmcMYVFIwrKQDkFDw7UFJbBLvu2sfwICSq695N_hXG7rQmcyXueDjgoFovxg5j3VwbduL8FoZaSTZhuAIdiIT94DMLmffmQsahhznttA9_6u0twqJnLN0sjcvEzMWIEKLNRsO9ZNugmIZxBdnBkL4NYH7l5CJ6YjeyBzgP6oVCZChsZ1RqTG5eQ_dSDwHbe4Z1MWkIKB91aZjxooh5L6MFOq1MLR-uPRRrritRGXv"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+<p class="absolute bottom-6 left-6 font-headline font-bold text-white uppercase tracking-tighter">Acabamento e Estilo</p>
+</div>
+<div class="flex-none w-[280px] md:w-80 h-[400px] md:h-[450px] relative group overflow-hidden rounded-sm">
+<img alt="Atendimento Personalizado" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY7wx-RPnUmdZ7huNlznq3sSrYLnskEGG14lw3yRmTMOWUr7UeEh5UOjsvWDJfBvR4DLqG_boXZXevPggqbO1sfWbdl06NsJHyY1O__Az8iFO8ZX-TG8Sg2Ko86BF8IsH6hSQI00GUkvNSbbEq_dSOuWZvb7pm8q7TW0sKkjCwLxklXxB-flYbkZu2unO56CjK8yw-rdqJ0Xv5JDsJ5XC9ba7DDEYddd-3KzMDQ2tbnUzY5rE872v5etg02nvCQ_LFVhAq70sG6b1W"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+<p class="absolute bottom-6 left-6 font-headline font-bold text-white uppercase tracking-tighter">Atendimento VIP</p>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-24 bg-background" id="services">
+<div class="container mx-auto px-6 lg:px-12">
+<div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-5xl md:text-7xl font-black font-headline tracking-tighter uppercase mb-6 leading-none">
+                    SERVIÇOS <span class="text-primary">MAGISTRAIS.</span>
+</h2>
+<p class="text-secondary text-lg">Combinamos técnicas ancestrais com a sofisticação da era moderna para oferecer resultados cirúrgicos e um cuidado excepcional.</p>
+</div>
+<div class="h-px bg-white/10 flex-grow hidden lg:block mx-12 mb-6"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Corte Magistral -->
+<div class="group relative bg-surface p-10 border border-white/5 hover:border-primary/40 transition-all duration-500 overflow-hidden">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 block">content_cut</span>
+<h3 class="text-2xl font-headline font-extrabold uppercase mb-4 tracking-tighter">Corte Magistral</h3>
+<p class="text-secondary mb-8 font-medium">Consultoria de visagismo e corte personalizado para o seu perfil.</p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">content_cut</span>
+</div>
+</div>
+<!-- Barba de Respeito -->
+<div class="group relative bg-surface p-10 border border-white/5 hover:border-primary/40 transition-all duration-500 overflow-hidden">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 block">face</span>
+<h3 class="text-2xl font-headline font-extrabold uppercase mb-4 tracking-tighter">Barba de Respeito</h3>
+<p class="text-secondary mb-8 font-medium">Toalha quente, navalha e óleos essenciais para um acabamento impecável.</p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">face</span>
+</div>
+</div>
+<!-- Acabamento e Estilo -->
+<div class="group relative bg-surface p-10 border border-white/5 hover:border-primary/40 transition-all duration-500 overflow-hidden">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 block">architecture</span>
+<h3 class="text-2xl font-headline font-extrabold uppercase mb-4 tracking-tighter">Acabamento e Estilo</h3>
+<p class="text-secondary mb-8 font-medium">Ajustes precisos para manter o visual em dia entre os cortes.</p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">architecture</span>
+</div>
+</div>
+<!-- Atendimento Personalizado -->
+<div class="group relative bg-surface p-10 border border-white/5 hover:border-primary/40 transition-all duration-500 overflow-hidden">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 block">handshake</span>
+<h3 class="text-2xl font-headline font-extrabold uppercase mb-4 tracking-tighter">Atendimento Personalizado</h3>
+<p class="text-secondary mb-8 font-medium">Experiência focada no seu conforto e satisfação total.</p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">handshake</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Differentiators Section -->
+<section class="py-24 bg-surface" id="differentiators">
+<div class="container mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1">
+<h2 class="text-5xl md:text-6xl font-black font-headline tracking-tighter uppercase mb-8 leading-tight">
+                    MAIS QUE UMA BARBEARIA, UM <span class="text-primary">ESTILO DE VIDA.</span>
+</h2>
+<div class="space-y-8">
+<div class="flex gap-6 items-start">
+<div class="bg-primary/10 p-3 rounded-sm">
+<span class="material-symbols-outlined text-primary text-3xl">meeting_room</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold uppercase tracking-tighter mb-2">Espaço Amplo e Diferenciado</h4>
+<p class="text-secondary">Um ambiente planejado para o máximo conforto e exclusividade no Jardim Rina.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="bg-primary/10 p-3 rounded-sm">
+<span class="material-symbols-outlined text-primary text-3xl">sports_esports</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold uppercase tracking-tighter mb-2">Área de Convivência com Mesa de Sinuca</h4>
+<p class="text-secondary">Descontraia enquanto aguarda ou após o seu serviço em nossa área de lazer premium.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="bg-primary/10 p-3 rounded-sm">
+<span class="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold uppercase tracking-tighter mb-2">Atendimento de Qualidade e Tradição</h4>
+<p class="text-secondary">A herança da barbearia clássica unida ao melhor do atendimento contemporâneo.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 relative">
+<div class="aspect-square bg-primary/10 absolute -top-4 -right-4 w-full h-full -z-10"></div>
+<img alt="Interior da Barbearia Raul Navalhas com mesa de sinuca" class="w-full aspect-[4/5] object-cover rounded-sm grayscale shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuOmTjB9Ly7ZWm_PunA6bFrIPM01wvr2Yj9BFCu34UmvUeT-nGC4O46AboYAmPqYNOfHs6OfZn1ebthjLn60sE6ouDYoTGHz-8x96o2alh5DZdVA0Kc-lyxUAWX_lSqjxzgWFGPZxOK0UxEF8yIG9nz9ERqhsG6az48QTkmqAwC6F3zbnv8r5YP51NFE4QORDbIPZwxHSU3tGNWq0BCJm0cROmDfVcDxyk--Dvw_SvwtobLksSkmymuGUTkOC09-V9DsySoEjra8So"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="py-24 bg-background" id="gallery">
+<div class="container mx-auto px-6 lg:px-12">
+<div class="mb-16 text-center">
+<h2 class="text-4xl md:text-5xl font-black font-headline tracking-tighter uppercase mb-4">Galeria Raul Navalhas</h2>
+<p class="text-secondary">O padrão ouro de estilo em cada detalhe de nosso trabalho.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px] md:auto-rows-[400px]">
+<div class="overflow-hidden group rounded-sm lg:col-span-2">
+<img alt="Corte texturizado perfil" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCtjfYWkg8FvKSww5ogyi7cvX1OMu6-g86MN6pHChqmM3APW3kKZBXjBMCBX2olTYwdXaxRuUcCreFshOF1cBHVzFqTpIZ2NKiQcvCx7-2qTE9eNIeEu5EzEOvGDv_1RQNkfg5j9PYQrLgNt7A-fXSuqcJcq9RRdoFsw_IwD3TuUv1qLslqyMfGuVoOqZk8uhidvghfSADC4BQwwRIZdrJTFjvCK8GEute_xI--Lgun3PaGF9BkbntMgYNM_m34yWn8YRQJpyxBkJS"/>
+</div>
+<div class="overflow-hidden group rounded-sm lg:row-span-2">
+<img alt="Atendimento na barbearia" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuOmTjB9Ly7ZWm_PunA6bFrIPM01wvr2Yj9BFCu34UmvUeT-nGC4O46AboYAmPqYNOfHs6OfZn1ebthjLn60sE6ouDYoTGHz-8x96o2alh5DZdVA0Kc-lyxUAWX_lSqjxzgWFGPZxOK0UxEF8yIG9nz9ERqhsG6az48QTkmqAwC6F3zbnv8r5YP51NFE4QORDbIPZwxHSU3tGNWq0BCJm0cROmDfVcDxyk--Dvw_SvwtobLksSkmymuGUTkOC09-V9DsySoEjra8So"/>
+</div>
+<div class="overflow-hidden group rounded-sm">
+<img alt="Barba alinhada retrato" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiyqy4fBL6dATWu-eOSxEVFpCScYUCKJrf9H1OvJwplBAUWbyuyPdRNm_GaijXlovfYLjp_esdF5F_6uIF3NvCJJK_XIGfzKDR-j_Vz2DjUhlrGyCHlPqcJ7h9GwkNmwTMpQhmZLftzVBFpVy1y3-O9JxG8OnE-VNCQbfQ0Gvl4zYCdG-DLkcY69EChahYwt0CE1nLGqv_zdbis0wUC1ZCGEMzYp8CqyMJY2SEIxaTd30r7trC6Gyfetdk66OOBNgcWFIuNdR-2vdH"/>
+</div>
+<div class="overflow-hidden group rounded-sm">
+<img alt="Detalhe de estilização" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHQAZj45Ye1yo1dezDwljhcEItnIYc5hg4OIL_FU_CYG6QOnp_6qe21Th4gbsP6yruU503AIK4kjq6OIQNcdgJ4TfcyiV_wrWKyk3TKRs_Olktm5iDKDLp5udFErTsY0-6_fAY9fuGnToIVMCqWWQLOWrRB4b-3iea7P44oBBQnR0Mv4tumFFufjg1FFS204njN6NQHWSuNpPy8G4LG2QMo_HlX_5wICxe9mfoxOQASrvIjEWhkN7BIw8rw0i4eMh3d4nj16Y1Y3f-"/>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-6 lg:px-12" id="contact">
+<div class="max-w-7xl mx-auto bg-primary p-10 md:p-20 rounded-sm flex flex-col lg:flex-row items-center justify-between gap-12 relative overflow-hidden">
+<div class="relative z-10 text-center lg:text-left">
+<h2 class="text-4xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter text-on-primary leading-[0.9] mb-6 uppercase">
+                O Seu Próximo <br class="hidden md:block"/> Grande Estilo <br class="hidden md:block"/> Começa Aqui.
+            </h2>
+<p class="text-on-primary/80 text-lg font-bold max-w-md uppercase tracking-tight">Reserve seu horário em segundos e viva a experiência Raul Navalhas.</p>
+</div>
+<div class="relative z-10 w-full lg:w-auto">
+<a class="block w-full lg:w-auto bg-black text-white font-headline font-black text-xl uppercase px-12 py-6 rounded-sm hover:scale-105 transition-transform tracking-tighter shadow-2xl text-center" href="https://wa.me/yournumber">
+                CHAMAR NO WHATSAPP
+            </a>
+</div>
+<!-- Decorative Large Text -->
+<span class="absolute -bottom-10 -right-10 text-[180px] md:text-[250px] font-black font-headline text-black/5 select-none pointer-events-none">BOOK</span>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-background w-full border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+<div class="text-center md:text-left">
+<a class="text-2xl font-black text-primary font-headline uppercase tracking-tighter flex items-center gap-3 justify-center md:justify-start" href="#">
+<img alt="Logo" class="h-8 w-auto bg-white rounded-full p-0.5" src="https://lh3.googleusercontent.com/aida/ADBb0ujj1rH20EwiuFV6rqC9o2p9MOEpQeoTi7OtvOBKlrjDlko242gE8WAtyIhaB3IeBu5cKfuZmGI8X1cqg1PwW3Ds4heOX8xEJM1XpO_uY2T6-aRZ6_Zik6mWjAW5AkkdR4T_o4spsBBsqHjvEE6na-TKOqfPy7SW0JswwIFgqbhV6ha7luXss15mldhg0R6FxWlcpMyBevHwjljTlEYKr3DO1rIDsxEEPWTK327jfmFSqgKUsNyTlCimhNwdhQLAZXHLB7ym_KZ6iVE"/>
+                RAUL NAVALHAS
+            </a>
+<p class="text-secondary text-sm mt-4 max-w-xs leading-relaxed">A excelência em barbearia no Jardim Rina. Estilo e técnica superior para quem não aceita menos que a perfeição.</p>
+</div>
+<div class="text-center md:text-left text-secondary space-y-4">
+<h5 class="text-on-background font-headline font-bold uppercase tracking-widest text-sm">Localização e Horários</h5>
+<p class="text-sm flex items-center justify-center md:justify-start gap-2">
+<span class="material-symbols-outlined text-primary text-xl">location_on</span>
+                Rua Olávo Hansen, 15 - Jardim Rina, <br/> Santo André - SP
+            </p>
+<p class="text-sm flex items-center justify-center md:justify-start gap-2">
+<span class="material-symbols-outlined text-primary text-xl">schedule</span>
+                Seg. a Sáb: 08:00 às 19:00 <br/> (Sábados até às 20:00)
+            </p>
+<a class="inline-flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-widest hover:underline pt-2" href="https://maps.google.com" target="_blank">
+                Ver no Google Maps <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+<div class="flex flex-col items-center md:items-end justify-between h-full gap-8">
+<div class="flex gap-6">
+
+</div>
+<div class="text-secondary font-headline text-[10px] tracking-[0.2em] text-center md:text-right uppercase">
+                © 2026 BARBEARIA RAUL NAVALHAS.<br/>TODOS OS DIREITOS RESERVADOS.
+            </div>
+</div>
+</div>
+</footer>
+<!-- Floating WhatsApp -->
+<a class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[110] group" href="https://wa.me/yournumber" target="_blank">
+<div class="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-25 group-hover:opacity-40"></div>
+<div class="relative bg-[#25D366] text-white p-4 md:p-5 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 active:scale-95">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+</svg>
+</div>
+</a>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const body = document.body;
+
+    function toggleMenu() {
+        const isOpen = !mobileMenu.classList.contains('translate-x-full');
+        if (isOpen) {
+            mobileMenu.classList.add('translate-x-full', 'opacity-0');
+            mobileMenu.classList.remove('translate-x-0', 'opacity-100');
+            body.classList.remove('mobile-menu-open');
+        } else {
+            mobileMenu.classList.remove('translate-x-full', 'opacity-0');
+            mobileMenu.classList.add('translate-x-0', 'opacity-100');
+            body.classList.add('mobile-menu-open');
+        }
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    menuClose.addEventListener('click', toggleMenu);
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) {
+            mobileMenu.classList.add('translate-x-full', 'opacity-0');
+            body.classList.remove('mobile-menu-open');
+        }
+    });
+</script>
+</body></html>
